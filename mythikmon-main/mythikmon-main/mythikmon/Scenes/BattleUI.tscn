@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://ddyx2275j6n0o"]
+
+[ext_resource type="Script" uid="uid://bm03lvxfkliqo" path="res://Scripts/BattleUI.cs" id="1_gl3jw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw32o"]
+bg_color = Color(0.078431375, 0.14117648, 0.23921569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.48235294, 0.64705884, 0.84705883, 1)
+
+[sub_resource type="Theme" id="Theme_v1gob"]
+Button/font_sizes/font_size = 18
+Label/font_sizes/font_size = 18
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_jw32o")
+RichTextLabel/font_sizes/normal_font_size = 16
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=582723855]
+script = ExtResource("1_gl3jw")
+
+[node name="Root" type="Control" parent="." unique_id=125668512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_v1gob")
+
+[node name="EnemyPanel" type="PanelContainer" parent="Root" unique_id=1835206114]
+custom_minimum_size = Vector2(390, 100)
+layout_mode = 0
+offset_left = 25.0
+offset_top = 30.0
+offset_right = 65.0
+offset_bottom = 70.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/EnemyPanel" unique_id=1317369920]
+layout_mode = 2
+
+[node name="EnemyName" type="Label" parent="Root/EnemyPanel/VBoxContainer" unique_id=1962234947]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EnemyHp" type="ProgressBar" parent="Root/EnemyPanel/VBoxContainer" unique_id=979959608]
+unique_name_in_owner = true
+layout_mode = 2
+show_percentage = false
+
+[node name="EnemySprite" type="TextureRect" parent="Root" unique_id=321938104]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 0
+offset_left = 630.0
+offset_top = 70.0
+offset_right = 810.0
+offset_bottom = 250.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerSprite" type="TextureRect" parent="Root" unique_id=362904171]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 230.0
+offset_right = 305.0
+offset_bottom = 410.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerPanel" type="PanelContainer" parent="Root" unique_id=1140267910]
+custom_minimum_size = Vector2(400, 90)
+layout_mode = 0
+offset_left = 535.0
+offset_top = 330.0
+offset_right = 935.0
+offset_bottom = 420.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/PlayerPanel" unique_id=1261648122]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="Root/PlayerPanel/VBoxContainer" unique_id=210389730]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PlayerHp" type="ProgressBar" parent="Root/PlayerPanel/VBoxContainer" unique_id=1151759097]
+unique_name_in_owner = true
+layout_mode = 2
+show_percentage = false
+
+[node name="PlayerHpText" type="Label" parent="Root/PlayerPanel/VBoxContainer" unique_id=2105565763]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="Root" unique_id=1268488422]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Root/BottomBar" unique_id=375264515]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Message" type="RichTextLabel" parent="Root/BottomBar/PanelContainer" unique_id=1154948457]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Root/BottomBar" unique_id=1704563503]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Root/BottomBar/PanelContainer2" unique_id=550419691]
+layout_mode = 2
+columns = 2
+
+[node name="AttackButton" type="Button" parent="Root/BottomBar/PanelContainer2/GridContainer" unique_id=1384293413]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "1 Attack"
+
+[node name="TalismanButton" type="Button" parent="Root/BottomBar/PanelContainer2/GridContainer" unique_id=1271372117]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Talisman"
+
+[node name="RunButton" type="Button" parent="Root/BottomBar/PanelContainer2/GridContainer" unique_id=307797604]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "3 Run"
